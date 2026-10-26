@@ -1,0 +1,123 @@
+/* ==========================================================================
+   data.js — TOÀN BỘ NỘI DUNG NẰM Ở ĐÂY. Muốn sửa chữ, ảnh, lời chúc... chỉ cần sửa file này.
+   Không cần đụng vào index.html hay script.js.
+   ========================================================================== */
+window.SITE = {
+
+  /* ---- Thông tin chung ---- */
+  name: "Lê Nhữ Duyệt",
+  alias: "Duyệt Lee",
+  title: "Không phải tại Đá thì cũng Đại Tá..",
+  birthDisplay: "27.10.2006",
+  birthDay: 27, birthMonth: 10,          // dùng cho dòng đếm ngược ở màn mở đầu
+  sender: "Nguyên Mộc",                  // người gửi
+  tagline: "Từng mang khát vọng bảo vệ Tổ quốc. Nay mang hành lý sang Hàn Quốc. Từng trao hoa cho người đẹp. Nay trao trái tim cho… số phận. Vì nước quên thân, vì dân phục vụ..",
+
+  /* ---- Nhạc nền (tuỳ chọn) ----
+     Bỏ 1 file mp3 vào assets/music/ rồi ghi đúng tên ở đây. Nếu không có file, nút nhạc tự ẩn.
+     Nhạc KHÔNG tự phát, người xem phải bấm nút. */
+  music: "assets/music/theme.mp3",
+
+  /* ---- Phần 2: Hồ sơ nhân vật ---- */
+  portrait: { src: "assets/images/duyet-portrait.jpg", caption: "Ảnh chân dung — đặt vào assets/images/duyet-portrait.jpg" },
+  fields: [
+    ["Họ tên", "Lê Nhữ Duyệt"],
+    ["Bí danh", "Duyệt Lee, hậu duệ tả quân Lê Văn Duyệt"],
+    ["Danh hiệu", "Lãng tử của hoa hồng"],
+    ["Ngày sinh", "27/10/2006"],
+    ["Nơi khởi đầu", "Bệnh viện Sản Nhi Vinh"],
+    ["Đại bản doanh", "Hưng Lộc Xạ"],
+    ["Đơn vị đào tạo", "THPT Hà Huy Tập"],
+    ["Đồng phạm thân thiết", "Nguyên Mộc đại ca"]
+  ],
+  /* value: 0–100 là độ dài thanh. infinite: true = thanh tràn viền, hiện ∞ */
+  stats: [
+    { label: "Kỹ năng đá FIFA",          value: 94,  text: "Huyền thoại quán net" },
+    { label: "Thành tích học tập",       value: 22,  text: "Học tài thi tạch" },
+    { label: "Khả năng tặng hoa",        value: 100,  text: "Đã từng triển khai chiến dịch" },
+    { label: "Tỷ lệ thành công tình trường", value: <10, text: "Dữ liệu chưa khả quan" },
+    { label: "Mức độ lãng tử",           value: 100, text: "Không thể đo lường", infinite: true },
+    { label: "Khả năng xuất ngoại",      value: 72,  text: "Đang triển khai nhiệm vụ tại Hàn Quốc" }
+  ],
+  statsNote: "Các chỉ số trên dựa trên truyền thuyết về huyền thoại Duyet Lee, chưa có nghiên cứu khoa học kiểm chứng.",
+
+  /* ---- Phần 3: Biên niên sử ----
+     image: để "" nếu không có ảnh. date: để "" nếu không có ngày chính xác. */
+  timeline: [
+    { tag: "Mốc 1", date: "27.10.2006", title: "Khởi nguồn tại Vinh", image: "",
+      text: "Đứa trẻ của lời tiên tri ra đời nơi Bệnh viện Sản Nhi Vinh, mang trong mình tiềm năng làm nên đại sự." },
+    { tag: "Mốc 2", date: "", title: "Kỷ nguyên Hà Huy Tập", image: "",
+      text: "Thanh xuân dữ dội cùng Nguyên Mộc đại ca. Những trận FIFA bất tận, những ngày cắm nét và triết lý SÚNG KHÔNG LAU SÚNG MAU HAN GỈ, NGƯỜI KHÔNG RÈN Ý CHÍ KHÔNG CAO" },
+    { tag: "Mốc 3", date: "", title: "Giấc mơ quân ngũ", image: "",
+      text: "Anh từng mơ đứng trong quân ngũ, mang trong mình khát vọng và lý tưởng tuổi trẻ." },
+    { tag: "Mốc 4", date: "", title: "Chiến dịch hoa hồng", image: "",
+      text: "Đối tượng: hoa khôi N.K.L. Phương thức: ôm hoa cảm tử. Kết quả: chiến dịch thảm bại. Mất mát: một đoá hồng đội giá. Thành quả: Đã đạt thành tích Nâu Gái Gú" },
+    { tag: "Mốc 5", date: "", title: "Ra đi tìm đường cứu nước", image: "",
+      text: "Đối tượng: hoa khôi Nguyễn Khánh Linh. Phương thức: trực tiếp tặng hoa. Kết quả: chiến dịch không đạt mục tiêu. Tổn thất: một chút hy vọng và một huyền thoại tình trường được khai sinh." },
+    { tag: "Mốc 6", date: "", title: "Xuất phát", image: "",
+      text: "Rời thành phố quê hương, hành trang có ước mơ, bạn bè, những ký ức thanh xuân và một trái tim vẫn chưa có chủ." }
+  ],
+
+  /* ---- Phần 4: Phòng trưng bày ----
+     Thêm ảnh: bỏ file vào assets/images/ rồi thêm 1 dòng { src, caption } bên dưới.
+     Xoá ảnh: xoá dòng tương ứng. Ảnh chưa có file sẽ hiện khung "ĐẶT ẢNH Ở…". */
+  gallery: [
+    { src: "assets/images/duyet-portrait.jpg",     caption: "Nhân vật chính của hồ sơ mật." },
+    { src: "assets/images/thpt-ha-huy-tap.jpg",    caption: "Kỷ nguyên Hà Huy Tập." },
+    { src: "assets/images/nguyen-moc-duyet.jpg",   caption: "Song sát một thời." },
+    { src: "assets/images/flower-mission.jpg",     caption: "Chiến dịch hoa hồng và những điều chưa kể." },
+    { src: "assets/images/quan-net.jpg",           caption: "Căn cứ FIFA bí mật. Giờ mở cửa: đến khi hết tiền." },
+    { src: "assets/images/san-bong.jpg",           caption: "Hiện trường những pha xử lý mà chỉ người trong cuộc mới tin." }
+  ],
+
+  /* ---- Phần 5: Case file ---- */
+  caseFile: {
+    code: "CASE FILE 2710",
+    title: "THE FLOWER INCIDENT",
+    lines: [
+      ["Đương sự",   "Lê Nhữ Duyệt, biệt danh Duyệt Lee."],
+      ["Danh hiệu",  "Lãng tử của hoa hồng."],
+      ["Nhiệm vụ",   "Chinh phục trái tim hoa khôi N.K.L."],
+      ["Chiến thuật","Tấn công trực diện bằng hoa tươi."],
+      ["Kết quả",    "Không đạt mục tiêu đề ra."],
+      ["Đánh giá sau nhiệm vụ", "Tình cảm nàng có thể không dành cho tôi, nhưng nàng không thể nghi ngờ về lòng quả cảm, sự can đảm và trái tim mến mộ nàng đầy chân thành của tôi."]
+    ],
+    stamp: "KHÔNG ĐẠT",
+    closing: "Có những bông hoa không thể trao đúng người, nhưng đã trở thành một phần không thể thiếu trong truyền thuyết tuổi trẻ."
+  },
+
+  /* ---- Phần 6: Thư chúc mừng (mỗi phần tử là một đoạn) ---- */
+  letter: {
+    button: "GIẢI MÃ LỜI CHÚC",
+    paragraphs: [
+      "Chúc mừng sinh nhật Duyệt Lee!",
+      "Thế là thêm một tuổi, thêm một chương mới trong cuộc đời của thằng từng cùng Nguyên tạo nên những kỷ niệm, nó có thể không được ghi trên giấy, nhưng đã được khắc trong tim.",
+      "Từ những ngày cắm nét đá FIFA ở thành Vinh đến hành trình sang Hàn Quốc, hy vọng Duyệt vẫn giữ được sự nhiệt huyết, cái chất riêng và lòng can đảm để theo đuổi những điều mình muốn.",
+      "Ngày trước Duyệt từng mơ làm lính, từng dũng cảm mang hoa đi chinh phục trái tim người đẹp. Có những chuyện không thành, nhưng tao nể vì Duyệt đã dám thử, dám làm, dám theo đuổi cái mình đề ra. Sau này cũng vậy, cứ đi, cứ trải nghiệm, cứ sống một cuộc đời đáng nhớ.",
+      "Chúc Duyệt tuổi mới mạnh khỏe, học hành thuận lợi, sớm thành công trên con đường đã chọn. Mong rằng Hàn Quốc sẽ cho Duyệt nhiều cơ hội, nhiều câu chuyện hay và biết đâu, một ngày nào đó, hồ sơ tình trường cũng có thêm vài trang thành tích.",
+      "Cảm ơn vì đã là một phần của những năm tháng thanh xuân ấy.",
+      "Sinh nhật vui vẻ nhé, Duyệt Lee."
+    ],
+    signature: "— Nguyên Mộc đại ca, nhân chứng lịch sử và đồng phạm cấp cao."
+  },
+
+  /* ---- Phần 7: Lời tiên tri ---- */
+  prophecyButton: "DỰ ĐOÁN VẬN MỆNH DUYỆT LEE",
+  prophecies: [
+    "Sự nghiệp rộng mở, tình trường vẫn đang bảo trì.",
+    "Năm nay có khả năng gặp quý nhân. Khuyến nghị không tặng hoa ngay lần đầu gặp.",
+    "Tỷ lệ thành công tại Hàn Quốc tăng mạnh nếu chịu khó học tập.",
+    "Nguyên Mộc đại ca xác nhận: nhân vật này vẫn còn tiềm năng.",
+    "Hệ thống dự đoán: tình yêu có thể đến bất cứ lúc nào, trừ khi tiếp tục cắm nét 12 tiếng mỗi ngày.",
+    "Cảnh báo: có dấu hiệu thanh toán tiền net hộ bạn bè. Khuyến nghị kiểm tra ví."
+  ],
+
+  /* ---- Phần 8: Kết ---- */
+  ending: {
+    headline: "27.10.2006 — MỘT HUYỀN THOẠI RA ĐỜI.",
+    wish: "Chúc Duyệt Lee tuổi mới sống hết mình, đi xa để trưởng thành và luôn nhớ nơi mình bắt đầu.",
+    hb: "Happy Birthday, Duyệt Lee.",
+    from: "From Nguyên Mộc — Your Partner in Crime.",
+    confettiButton: "BẮN PHÁO GIẤY"
+  }
+};

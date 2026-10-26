@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Duyệt Lee — Hồ sơ mật của một lãng tử</title>
+<meta name="theme-color" content="#0e0e0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Oswald:wght@500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="cut" id="cut" aria-hidden="true"></div>
+<button class="music" id="music" type="button" hidden aria-pressed="false"><span class="music__icon" aria-hidden="true"></span><span id="musicLabel">Bật nhạc</span></button>
+
+<!-- 1. MỞ ĐẦU -->
+<header class="intro" id="intro">
+  <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+  <div class="intro__light" aria-hidden="true"></div>
+  <div class="bar bar--top" aria-hidden="true"></div><div class="bar bar--bottom" aria-hidden="true"></div>
+  <p class="intro__kicker mono"><span class="rec" aria-hidden="true"></span><span id="kicker" aria-label="Classified personnel file"></span></p>
+  <p class="intro__countdown mono" id="countdown"></p>
+  <div class="intro__main" id="introMain">
+    <h1 class="intro__name" id="introName"></h1>
+    <p class="intro__alias" id="introAlias"></p>
+    <p class="intro__date mono" id="introDate"></p>
+    <p class="intro__tagline" id="introTag"></p>
+    <button class="btn" id="openBtn" type="button">MỞ HỒ SƠ NHÂN VẬT</button>
+  </div>
+</header>
+
+<main>
+<!-- 2. HỒ SƠ -->
+<section class="sec" id="profile">
+  <div class="wrap">
+    <p class="eyebrow mono">Hồ sơ lưu trữ · Mật</p>
+    <h2 class="h2">Hồ sơ nhân vật</h2>
+    <div class="dossier reveal">
+      <figure class="dossier__photo" id="portrait"></figure>
+      <dl class="dossier__fields" id="fields"></dl>
+    </div>
+    <div class="stats reveal">
+      <h3 class="h3">Chỉ số nhân vật</h3>
+      <div id="stats"></div>
+      <p class="fine mono" id="statsNote"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. BIÊN NIÊN SỬ -->
+<section class="sec sec--alt" id="timeline">
+  <div class="wrap">
+    <p class="eyebrow mono">Tư liệu theo thời gian</p>
+    <h2 class="h2">Biên niên sử huyền thoại</h2>
+    <ol class="tl" id="tl"></ol>
+  </div>
+</section>
+
+<!-- 4. PHÒNG TRƯNG BÀY -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <p class="eyebrow mono">Kho ảnh tư liệu</p>
+    <h2 class="h2">Phòng trưng bày</h2>
+    <div class="shots" id="shots"></div>
+  </div>
+</section>
+
+<!-- 5. CASE FILE -->
+<section class="sec sec--alt" id="case">
+  <div class="wrap">
+    <article class="case reveal">
+      <header class="case__head">
+        <p class="mono case__code" id="caseCode"></p>
+        <h2 class="case__title" id="caseTitle"></h2>
+      </header>
+      <dl class="case__lines" id="caseLines"></dl>
+      <div class="stamp" id="caseStamp" aria-hidden="true"></div>
+      <p class="case__closing" id="caseClosing"></p>
+    </article>
+  </div>
+</section>
+
+<!-- 6. THƯ -->
+<section class="sec" id="letterSec">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow mono">Tài liệu mã hoá</p>
+    <h2 class="h2">Thư chúc mừng</h2>
+    <button class="btn" id="letterBtn" type="button" aria-expanded="false" aria-controls="letter"></button>
+    <p class="decode mono" id="decode" hidden aria-live="polite"></p>
+    <div class="letter" id="letter" hidden>
+      <div class="letter__paper" id="letterPaper" tabindex="0" aria-label="Lá thư chúc mừng. Nhấn để hiện toàn bộ."></div>
+      <p class="fine mono letter__hint" id="letterHint">Nhấn vào lá thư để hiện nhanh toàn bộ.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. TIÊN TRI -->
+<section class="sec sec--alt" id="oracle">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow mono">Hệ thống dự báo</p>
+    <h2 class="h2">Lời tiên tri tuổi mới</h2>
+    <div class="oracle reveal">
+      <div class="oracle__screen" id="oracleScreen" aria-live="polite"><span class="mono oracle__idle">Sẵn sàng. Nhấn nút để quét vận mệnh.</span></div>
+      <div class="oracle__row">
+        <button class="btn" id="oracleBtn" type="button"></button>
+        <span class="fine mono" id="oracleCount"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. KẾT -->
+<section class="end" id="end">
+  <div class="wrap wrap--narrow">
+    <h2 class="end__headline" id="endHead"></h2>
+    <p class="end__wish" id="endWish"></p>
+    <p class="end__hb" id="endHb"></p>
+    <p class="end__from mono" id="endFrom"></p>
+    <button class="btn btn--ghost" id="confettiBtn" type="button"></button>
+  </div>
+</section>
+</main>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn" hidden>
+  <button class="lb__close" id="lbClose" type="button" aria-label="Đóng">×</button>
+  <button class="lb__nav lb__nav--prev" id="lbPrev" type="button" aria-label="Ảnh trước">‹</button>
+  <button class="lb__nav lb__nav--next" id="lbNext" type="button" aria-label="Ảnh sau">›</button>
+  <figure class="lb__fig"><div class="lb__media" id="lbMedia"></div><figcaption id="lbCap"></figcaption><p class="mono fine" id="lbCount"></p></figure>
+</div>
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+<noscript><p style="padding:2rem;color:#ece6d8">Trang này cần bật JavaScript để mở hồ sơ.</p></noscript>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
