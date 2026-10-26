@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "Website sinh nhật bằng HTML/CSS/JS thuần, không cần cài gì.",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndang141106-cmd/happybirthdayduyetlee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndang141106-cmd/happybirthdayduyetlee/issues"
+  },
+  "homepage": "https://github.com/ndang141106-cmd/happybirthdayduyetlee#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
